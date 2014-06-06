@@ -1,0 +1,41 @@
+Find strings which are having duplicate chars in given string array
+
+Program::
+
+public class Duplicate {
+    public static void main(String[] args) {
+        String[] str = {"dussera", "slap", "fool","boolean","clap"};
+        String[] str1 = new String[str.length];
+
+        String ch_ary;
+        System.out.println(str.length);
+        int j=0;
+        for(int i=0;i<str.length;i++){
+            ch_ary = strwithdupch(str[i]);
+            if(ch_ary != null ){
+                System.out.println(ch_ary);
+                str1[j++] = ch_ary;
+            }
+        }     
+        System.out.println("Now print the array");
+        for(int i=0;i<j;i++){
+            System.out.print(str1[i]+" ");
+        }
+   }
+      
+    public static String strwithdupch(String arr) {
+        int flag = 0;
+        for(int j=0;j<arr.length();j++){
+            for(int k=j+1;k<arr.length();k++){
+                if(arr.charAt(j) == arr.charAt(k)) { flag++; }
+            }       
+        }       
+        if (flag > 0){
+            return arr;       
+        }else
+        {
+            return(null);       
+        }
+    }
+
+}
