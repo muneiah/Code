@@ -1,0 +1,41 @@
+Museum Problem ::
+Problem:
+
+You have a museum with a grid layout for its rooms. Each room is of the same size and uniquely numbered. The museum has two gates G1 and G2 – each gate works as an entry and exit point. A person enters through gate G1, walks through each room and then leave through G2. Similarly, a person may enter through gate G2, walk through each room and then leave through G1. To illustrate this with an example, below is a museum with 25 rooms. 
+
+Write a program that given two visitors V1 and V2 entering from gates G1 and G2 respectively, find the room in the museum that they meet? Visitor V1 spends time T1 in each room before moving to the next room sequentially i.e. from 1 to 2 to 3 and so on and Visitor V2 spends time T2 in each room before moving to the next room sequentially i.e. in the above case of 25 rooms from 25 to 24 to 23 and so on.
+
+Program::
+
+import java.util.Scanner;
+public class Problem {
+    public static void main(String arg[]){
+        Scanner ob=new Scanner(System.in);
+        int time1, time2;
+        System.out.println("How many rooms are there in musium: ");
+        int room_count=ob.nextInt();
+        if(room_count > 0){
+            System.out.println("User 1 starts from room 1 \nUser 2 starts from room "+ room_count);
+            if(room_count == 1){
+                System.out.println("User 1 and User 2 meets in room no: " + room_count);
+            }
+            else{
+                System.out.println("How much time(in sec) will spend in each room by the User1: ");  
+                time1=ob.nextInt();
+                System.out.println("How much time(in sec) will spend in each room by the User2: ");  
+                time2=ob.nextInt();
+                int result = ((room_count*time1*time2)/(time1+time2))/time1;
+                if(room_count % 2 == 0){
+                    System.out.println("User 1 and User 2 cross each other in between room " + result + " and room " + (result+1));
+                }
+                else{
+                    System.out.println("User 1 and User 2 meets in room " + (result + 1));
+                }
+            }
+        }
+        else{
+            System.out.println("Rooms count should be more than zero");
+        }
+    }
+
+}
