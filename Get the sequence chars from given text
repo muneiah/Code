@@ -1,0 +1,32 @@
+Get the sequence chars from given text
+
+Program::
+
+public class Series {
+    public static void main(String arg[]){
+        String str = "yuwetabcdefgrqwyu";
+        System.out.println(str);
+
+        char ch[]= str.toCharArray();
+        char result[] = new char[20];
+        int c=0, f=0;
+        result[0]=ch[0];
+        if(ch[1] == result[0]+1)
+            c++;
+        for(int i=1;i<ch.length-1;i++){
+            if((ch[i] == ch[i-1]+1) || (ch[i] == ch[i+1]-1)){
+                result[c++] = ch[i];
+            }
+        }
+        if(ch[ch.length-1] == result[c-1]+1)
+            result[c++] = ch[ch.length-1];
+        System.out.println(String.valueOf(result));
+    }   
+
+}
+
+Input:
+yuwetabcdefgrqwyu
+
+Output:
+abcdefg
