@@ -1,0 +1,31 @@
+Get the data for given IP address from log file
+
+Program::
+
+public class Log {
+    public static void main(String[] args) {
+        BufferedReader br = null;
+        String ip = "10.4.23.21";
+
+        try {
+                String sCurrentLine;
+                br = new BufferedReader(new FileReader("D:\\ip_add.txt"));
+                while ((sCurrentLine = br.readLine()) != null) {
+                    if(sCurrentLine.contains(ip))
+                        System.out.println(sCurrentLine);
+                }
+        } catch (IOException e) {
+                e.printStackTrace();
+        }
+    }
+
+}
+
+Input: log file has below data
+timestamp  ip         email
+7145126347 10.2.67.56 dhsg@oracle.com
+2738478234 10.4.23.21 asjhfg@gmail.com
+2347526374 10.56.34.3 dhsjf@yahoo.com
+
+Output:
+2738478234 10.4.23.21 asjhfg@gmail.com
