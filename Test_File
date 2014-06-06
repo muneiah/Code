@@ -1,3 +1,17 @@
-Ruby Selenium ::
+array.find_all{|image| ['PRI', 'ADD'].include?(image.role)}.map(&:name)
+
+convert string array to int array
+arr = ['1', '2', '3']
+arr.map(&:to_i)
 
 
+arr = ["foo", "bar", "oppai", "baz", "chippai"]
+ 
+puts 'arr.select(&[:start_with?, "ba"])'
+# ["bar", "baz"]
+res1 = arr.select(&[:start_with?, "ba"])
+puts "=> #{res1.inspect}"
+ 
+puts 'arr.map(&[:gsub, /o/,"a"])'
+# ["faa", "bar", "appai", "baz", "chippai"]
+res2 = arr.map(&[:gsub, /o/,"a"])puts "=> #{res2.inspect}"
